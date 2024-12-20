@@ -12,4 +12,6 @@ func TestTCPTransport(t *testing.T) {
 	transport := NewTCPTransport(listenAddress)
 
 	assert.Equal(t, transport.listenAddress, listenAddress)
+
+	assert.Nil(t, transport.ListenAndAccept())
 }
