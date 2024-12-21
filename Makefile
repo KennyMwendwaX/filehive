@@ -2,7 +2,7 @@ build:
 	@go build -o bin/filehive
 
 run: build
-	@./bin/fh
+	@./bin/filehive
 
 test:
 	@go test -v ./...	
