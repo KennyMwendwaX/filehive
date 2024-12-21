@@ -52,8 +52,6 @@ func (t *TCPTransport) ListenAndAccept() error {
 	return nil
 }
 
-type Temp struct{}
-
 func (t *TCPTransport) acceptConnections() {
 	for {
 		conn, err := t.listener.Accept()
@@ -76,13 +74,14 @@ func (t *TCPTransport) handleConnection(conn net.Conn) {
 		return
 	}
 
-	msg := &Temp{}
+	msg := &Message{}
 	for {
 		if err := t.Decoder.Decode(conn, msg); err != nil {
 			fmt.Println("Error decoding message:", err)
 			continue
 		}
 
+		fmt.Println("Received message:", msg)
 	}
 
 }

@@ -1,5 +1,5 @@
 build:
-	@go build -o bin/fh
+	@go build -o bin/filehive
 
 run: build
 	@./bin/fh
