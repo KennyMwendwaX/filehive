@@ -15,12 +15,12 @@ func GenerateID() string {
 	return hex.EncodeToString(buf)
 }
 
-func hashKey(key string) string {
+func HashKey(key string) string {
 	hash := md5.Sum([]byte(key))
 	return hex.EncodeToString(hash[:])
 }
 
-func newEncryptionKey() []byte {
+func NewEncryptionKey() []byte {
 	keyBuf := make([]byte, 32)
 	io.ReadFull(rand.Reader, keyBuf)
 	return keyBuf
