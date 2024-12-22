@@ -81,7 +81,9 @@ func (t *TCPTransport) handleConnection(conn net.Conn) {
 			continue
 		}
 
-		fmt.Println("Received message:", msg)
+		msg.From = conn.RemoteAddr()
+
+		fmt.Println("Received message from:", msg.From, "with payload:", string(msg.Payload))
 	}
 
 }

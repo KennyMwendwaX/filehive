@@ -1,4 +1,4 @@
-module github.com/KennyMwendwaX/file-hive
+module github.com/KennyMwendwaX/filehive
 
 go 1.23.3
 
