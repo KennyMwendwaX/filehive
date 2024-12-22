@@ -3,13 +3,13 @@ package main
 import (
 	"log"
 
-	"github.com/KennyMwendwaX/file-hive/p2p"
+	"github.com/KennyMwendwaX/filehive/p2p"
 )
 
 func main() {
 	tcpOpts := p2p.TCPTransportOpts{
-		ListenAddress: ":3000",
-		Handshake:     p2p.NOPHandshakeFunc,
+		ListenAddr:    ":3000",
+		HandshakeFunc: p2p.NOPHandshakeFunc,
 		Decoder:       p2p.DefaultDecoder{},
 	}
 	transport := p2p.NewTCPTransport(tcpOpts)
