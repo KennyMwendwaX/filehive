@@ -9,7 +9,7 @@ import (
 	"io"
 )
 
-func generateID() string {
+func GenerateID() string {
 	buf := make([]byte, 32)
 	io.ReadFull(rand.Reader, buf)
 	return hex.EncodeToString(buf)
